@@ -12,10 +12,7 @@ public class Exec {
 			Process p = Runtime.getRuntime().exec("cmd /c java -jar \"C:\\Users\\gauthier\\Desktop\\School\\SEM 4\\4-Software design\\Project\\Snake-master\\SnakeGame.jar\"");
 			
 			BufferedReader bri = new BufferedReader(new InputStreamReader(p.getInputStream()));
-			BufferedReader bre = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-			BufferedWriter bro = new BufferedWriter(new OutputStreamWriter(p.getOutputStream()));
-		    bro.write("Yuu");
-		    bro.close();	      
+			BufferedReader bre = new BufferedReader(new InputStreamReader(p.getErrorStream()));      
 			while ((line = bri.readLine()) != null) {
 				System.out.println(line);
 			}
