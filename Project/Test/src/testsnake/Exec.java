@@ -10,7 +10,7 @@ public class Exec {
 		try {
 			String line;
 			Process p = Runtime.getRuntime().exec("cmd /c java -jar \"C:\\Users\\gauthier\\Desktop\\School\\SEM 4\\4-Software design\\Project\\Snake-master\\SnakeGame.jar\"");
-			
+
 			BufferedReader bri = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			BufferedReader bre = new BufferedReader(new InputStreamReader(p.getErrorStream()));      
 			while ((line = bri.readLine()) != null) {
@@ -20,15 +20,15 @@ public class Exec {
 			while ((line = bre.readLine()) != null) {
 				System.out.println(line);
 			}
-			
-		    bre.close();
 
-		    p.waitFor();
-		    System.out.println("Program closed!");
+			bre.close();
+
+			p.waitFor();
+			System.out.println("Program closed!");
 	 	}
-	    catch (Exception err) {
-	      err.printStackTrace();
-	    }
+		catch (Exception err) {
+			err.printStackTrace();
+		}
 		
 	}
 }
