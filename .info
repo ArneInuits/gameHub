@@ -10,6 +10,14 @@ info over gui programming voor later
 https://www.ntu.edu.sg/home/ehchua/programming/java/J4a_GUI.html 
 https://www.javaworld.com/article/2077188/core-java/introduction-to-the-awt.html
 #############################################################################
+SWING 
+Visual guide : Wat is wat http://web.mit.edu/6.005/www/sp14/psets/ps4/java-6-tutorial/components.html
+Introduction to Swing : http://csc.columbusstate.edu/woolbright/java/swing.html
+background picker : http://www.java2s.com/Code/Java/Swing-JFC/ColorChooserSample1.htm
+Foto's met mouse listener : https://stackoverflow.com/questions/11243724/java-adding-imageicon-to-jlabel
+###########################################################
+##################
+!! dit is denk ik allemaal in AWT !! zie apart deel over Swing !!! 
 Details voor later:
 Kleurselectie: http://www.java-examples.com/change-button-background-color-example
 searchbalk + search function : https://stackoverflow.com/questions/19868287/how-can-i-make-a-search-box-in-java
