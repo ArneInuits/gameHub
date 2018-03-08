@@ -25,3 +25,5 @@ keyEvent: pijltjes https://stackoverflow.com/questions/616924/how-to-check-if-th
 info voor later als we main class & gui class willen laten interacten: https://codereview.stackexchange.com/questions/48868/interacting-with-gui-class-and-main-class
 #############################################################################
 Leekracht zei nog iets over: Handler, Facade programming, ..
+#############################################################################
+comm. diagram, sequentie diagram = https://people.cs.kuleuven.be/~joost.vennekens/DN/UML.pdf
