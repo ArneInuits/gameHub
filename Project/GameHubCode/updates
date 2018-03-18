@@ -1,0 +1,4 @@
+18/03
+De klasse Game kan nu tekst bestanden van een relatief path src/HighScores.txt lezen
+De highScores staan niet meer in een HashMap, maar in een ArrayList<Score>
+Score is een nieuwe klasse speciaal voor het makkelijk te gebruiken van die ArrayList
