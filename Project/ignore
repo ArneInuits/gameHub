@@ -1,0 +1,94 @@
+package TestPackage;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.net.URL;
+
+public class Gamehub {
+	
+	private Color backgroundColor = Color.getColor("#a0a0a0");
+	
+	public Gamehub() {
+        JFrame frame = makeFrame();
+        makeImage(frame);
+        makeColorPicker(frame);
+        makeRightPanel(frame);
+
+    }	
+	
+	private JFrame makeFrame() {
+		// container which can hold all the components
+    	JFrame frame = new JFrame("Gamehub menu");
+    		
+        // stops when user exits program
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        // Maximized size on extended 
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+       
+        // No top bar
+        frame.setUndecorated(true);
+        
+        //Display the window
+        frame.pack();
+        frame.setVisible(true);
+        return frame;
+	}
+	
+
+	private void makeImage(JFrame frame) {
+		URL picURL = getClass().getResource("/res/testpic.png");
+		ImageIcon image = new ImageIcon(picURL);
+		JLabel imagelabel = new JLabel(image);
+		frame.add(imagelabel, BorderLayout.PAGE_END);
+	}
+	
+	
+	private void makeColorPicker(JFrame frame) {
+		// get the content pane of the JFrame container 
+		Container c = frame.getContentPane();
+		JButton button = new JButton("Pick a new background color");
+
+		// Make an action listener that will open a JColorChooser when an action is completed
+	    ActionListener listener = new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		// pick new background color and set it as background of frame
+	    		setBackgroundColor(JColorChooser.showDialog(null, "Change Button Background", backgroundColor), frame);
+	    	}
+	    };
+	    
+	    // Link previous action listener to the button we created
+	    button.addActionListener(listener);
+	    c.add(button, BorderLayout.PAGE_START);
+	}
+	
+	private void makeRightPanel(JFrame frame) {
+		JPanel panel = new JPanel();
+		panel.setPreferredSize(new Dimension(400, 1));
+		frame.add(panel, BorderLayout.EAST);
+		
+		
+	}
+	public void setBackgroundColor(Color color, JFrame frame) {
+		backgroundColor = color;
+		Container c = frame.getContentPane();
+		c.setBackground(color);
+	}
+	
+	public Color getBackgroundColor() {
+		return backgroundColor;
+	}
+	
+	
+	
+	public static void main(String[] args){
+		// Needs to be a runnable for threading 
+		SwingUtilities.invokeLater(new Runnable() { 
+		      public void run() { 
+		        new Gamehub();
+		      }
+		 });
+	}
+}
+
