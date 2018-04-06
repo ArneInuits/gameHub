@@ -1,0 +1,141 @@
+package TestPackage;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.net.URL;
+
+public class Gamehub {
+	
+	private JFrame frame;
+	private JPanel centerPanel;
+	private JPanel rightPanel;
+	
+	
+	private GridBagConstraints constraints;
+	private Color backgroundColor = Color.getColor("#a0a0a0");
+	
+	public Gamehub() {
+        frame = makeFrame();
+        centerPanel = makecenterPanel();
+        rightPanel = makeRightPanel();
+
+        
+        makeTitle();
+        //makeImage(frame);
+        makeColorPicker();
+        
+        //temp
+        makeHideButton();
+    }	
+	
+	private JFrame makeFrame() {
+		// container which can hold all the components
+    	JFrame frame = new JFrame("Gamehub menu");
+    		
+        // stops when user exits program
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        // Maximized size on extended 
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+  
+        // No top bar
+        frame.setUndecorated(true);
+        
+        //Display the window
+        frame.pack();
+        frame.setVisible(true);
+        return frame;
+	}
+	
+	private JPanel makeRightPanel() {
+		JPanel panel = new JPanel();
+		
+		// temp, until we get some components in it.
+		panel.setPreferredSize(new Dimension(400, 400));
+		
+		
+		frame.add(panel, BorderLayout.EAST);
+		return panel;
+	}
+	
+	private JPanel makecenterPanel() {
+		JPanel panel = new JPanel(new GridBagLayout());
+		
+		panel.setBackground(Color.gray);
+		frame.add(panel, BorderLayout.CENTER);
+		return panel;
+	}
+	
+	private void makeColorPicker() {
+		JButton button = new JButton("Pick a new background color");
+
+		// Make an action listener that will open a JColorChooser when an action is completed
+	    ActionListener listener = new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		centerPanel.setBackground(JColorChooser.showDialog(null, "Change the background", backgroundColor));
+	    	}
+	    };
+	    // Link previous action listener to the button we created
+	    button.addActionListener(listener);
+	    
+
+	    centerPanel.add(button, constraints);
+	}
+	
+	private void makeTitle() {
+		URL url = getClass().getResource("/res/menupic.png");
+		ImageIcon image = new ImageIcon(url);
+		JLabel label = new JLabel(image);
+		centerPanel.add(label, constraints);
+	}
+	
+	private void makeHideButton() {
+		JButton b = new JButton("Toggle the right panel");
+		
+		ActionListener listener = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rightPanel.setVisible(!rightPanel.isVisible());
+			}
+		};
+		
+		b.addActionListener(listener);
+		centerPanel.add(b, constraints);
+	}
+	
+	
+	private void makeImage(int x, int y) {
+		URL picURL = getClass().getResource("/res/testpic.png");
+		ImageIcon image = new ImageIcon(picURL);
+		JLabel imagelabel = new JLabel(image);
+		//frame.add(imagelabel, BorderLayout.CENTER);
+	}
+	
+
+	
+	
+
+	
+	
+/*	
+	public void setBackgroundColor(Color color, JFrame frame) {
+		backgroundColor = color;
+		Container c = frame.getContentPane();
+		c.setBackground(color);
+	}
+	
+	public Color getBackgroundColor() {
+		return backgroundColor;
+	}
+*/
+
+	
+	public static void main(String[] args){
+		SwingUtilities.invokeLater(new Runnable() { 
+		      public void run() { 
+		        new Gamehub();
+		      }
+		 });
+	}
+}
+
