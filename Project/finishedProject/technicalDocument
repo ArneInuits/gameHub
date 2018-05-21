@@ -31,6 +31,14 @@ Game
 -java.util.*
 -java.io.*
 
-Extenions of game
+Extenions of Game
 -java.io.IOException
 -----------------------------------------
+-----------------------------------------
+Imported 3th party packages
+
+SNAKE
+https://github.com/hexadeciman/Snake
+
+PONG
+https://github.com/mihneadb/Pong/blob/master/Main.java
