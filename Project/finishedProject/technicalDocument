@@ -1,0 +1,36 @@
+  ___________________
+ |                   |
+ |Technical Document |
+ |___________________|
+
+
+----------------------------------------
+Used IDE --> Eclipse
+----------------------------------------
+
+----------------------------------------
+Used Libraries
+
+GameHub
+-java.awt.*
+-java.awt.event.*
+-javax.swing.*
+-javax.swing.event.ChangeEvent
+-javax.swing.event.ChangeListener
+-java.net.URL
+-java.io.*
+-java.util.scanner
+-java.util.ArrayList
+-java.util.List
+
+Control
+-java.io.*
+-java.util.ArrayList
+
+Game
+-java.util.*
+-java.io.*
+
+Extenions of game
+-java.io.IOException
+-----------------------------------------
